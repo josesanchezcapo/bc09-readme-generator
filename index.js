@@ -23,6 +23,7 @@ THEN I am taken to the corresponding section of the README
 // required pakage
 
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 // readme questions
 
