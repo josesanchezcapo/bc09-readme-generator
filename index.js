@@ -26,7 +26,7 @@ const inquirer = require('inquirer');
 
 // readme questions
 
-const readmeQuestions= [
+const readmeQuestions = [
     {
         type: 'input',
         message: "What is your GitHub username?",
@@ -93,17 +93,35 @@ const readmeQuestions= [
     {
         type: 'list',
         message: "Please choose the type of  license that best fit your project.",
-        choices: ['MIT License','GNU AGPLv3', 'GNU LGPLv3','Apache License 2.0' ],
+        choices: ['MIT License', 'GNU AGPLv3', 'GNU LGPLv3', 'Apache License 2.0'],
         name: 'licenseType'
     }
 ];
 
+// write responses to a file
 
 // select license image base license type selection
 
 // generate readme bases on responses
 
-// main funntion
+// main
+
+async function myMain() {
+
+    try {
+
+        // clear terminal
+        console.clear();
+        // prompt readme questions
+        const myResponses = await inquirer.prompt(readmeQuestions);
+        console.log("Responses: ", myResponses);
+
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 // calling main
+
+myMain();
 
