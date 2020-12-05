@@ -22,12 +22,12 @@ THEN I am taken to the corresponding section of the README
 
 // required pakage
 
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 const fs = require('fs');
-const myModules = require('my_modules');
+const myModules = require('modules');
 
 // My Modules
-const readmeGenerator = require('./my_modules/readmeGenerator.js')
+const readmeGenerator = require('./modules/readmeGenerator.js')
 
 // readme questions
 

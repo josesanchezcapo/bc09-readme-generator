@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/josesanchezcapo/bc09-readme-generator#readme",
   "dependencies": {
+    "fund": "^1.0.0",
     "inquirer": "^7.3.3"
   },
   "devDependencies": {}
