@@ -99,7 +99,11 @@ const readmeQuestions= [
 ];
 
 
-// select license image base on objecte selection
+// select license image base license type selection
 
 // generate readme bases on responses
+
+// main funntion
+
+// calling main
 
