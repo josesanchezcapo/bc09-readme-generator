@@ -20,12 +20,13 @@ THEN I am taken to the corresponding section of the README
 
 */
 
-// required pakage
+// declaring dependencies
 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 const readmeGenerator =  require('./util/readmeGenerator.js')
+const writeReadme = util.promisify(fs.writeFile);
 
 // readme questions
 
@@ -81,17 +82,21 @@ const readmeQuestions = [
     {
         type: 'input',
         message: "Please provide the steps required to install your project.",
-        name: 'installationSteps'
+        name: 'installationSteps',
+        default: 'Installation Steps'
     },
     {
         type: 'input',
         message: "Please provide instructions and examples of your project.",
-        name: 'usageInformation'
+        name: 'usageInformation',
+        default: 'Usage Information'
+
     },
     {
         type: 'input',
         message: "Please provide description on how to run them.",
-        name: 'howTo'
+        name: 'howTo',
+        default: 'How To'
     },
     {
         type: 'list',
@@ -100,14 +105,6 @@ const readmeQuestions = [
         name: 'licenseType'
     }
 ];
-
-// write responses to a file
-
-
-
-// select license image base license type selection
-
-// generate readme bases on responses
 
 // main
 
@@ -118,8 +115,12 @@ async function init() {
         console.clear();
         // prompt readme questions and console log user responses
         const userResponses = await inquirer.prompt(readmeQuestions);
-        const readme = readmeGenerator(userResponses);
+        let readme = readmeGenerator(userResponses);
         console.log('Your Responses are: ', userResponses);
+
+        // Write new README
+        await writeReadme('SAMPLE-README.md', readme);
+        console.log('SAMPLE-README.md sucessfully created');
 
     } catch (error) {
         console.log(error);
