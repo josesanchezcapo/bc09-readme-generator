@@ -33,74 +33,98 @@ const writeReadme = util.promisify(fs.writeFile);
 const readmeQuestions = [
     {
         type: 'input',
-        message: "What is your GitHub username?",
+        message: 'What is your GitHub username?',
         name: 'username',
-        default: 'GitHub-Profile',
+        default: 'GitHub  UserName',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid answer is required.");
+                return console.log('A valid answer is required.');
             }
             return true;
         }
     },
     {
         type: 'input',
-        message: "What is the name of your GitHub repository?",
+        message: 'What is your GitHub url',
+        name: 'githubProfile',
+        default: 'GitHub-Profile',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log('A valid answer is required.');
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
+        message: 'What is your GitHub email',
+        name: 'email',
+        default: 'email',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log('A valid answer is required.');
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
+        message: 'What is the name of your GitHub repository?',
         name: 'readmeRepository',
         default: 'Generator',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid GitHub repo is required.");
+                return console.log('A valid GitHub repo is required.');
             }
             return true;
         }
     },
     {
         type: 'input',
-        message: "Project Title?",
+        message: 'Project Title?',
         name: 'projectTitle',
         default: 'Title',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid project title is required.");
+                return console.log('A valid project title is required.');
             }
             return true;
         }
     },
     {
         type: 'input',
-        message: "Please enter a description for your project.",
+        message: 'Please enter a description for your project.',
         name: 'projectDescription',
         default: 'Description',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid project description is required.");
+                return console.log('A valid project description is required.');
             }
             return true;
         }
     },
     {
         type: 'input',
-        message: "Please provide the steps required to install your project.",
+        message: 'Please provide the steps required to install your project.',
         name: 'installationSteps',
         default: 'Installation Steps'
     },
     {
         type: 'input',
-        message: "Please provide instructions and examples of your project.",
+        message: 'Please provide instructions and examples of your project.',
         name: 'usageInformation',
         default: 'Usage Information'
 
     },
     {
         type: 'input',
-        message: "Please provide description on how to run them.",
+        message: 'Please provide description on how to run them.',
         name: 'howTo',
         default: 'How To'
     },
     {
         type: 'list',
-        message: "Please choose the type of  license that best fit your project.",
+        message: 'Please choose the type of  license that best fit your project.',
         choices: ['MIT License', 'GNU AGPLv3', 'GNU LGPLv3', 'Apache License 2.0'],
         name: 'licenseType'
     }

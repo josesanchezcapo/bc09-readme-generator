@@ -21,7 +21,7 @@ ${userResponses.usageInformation}
 ${userResponses.howTo}
 ## Questions
 For any questions, please reach out to me:
-    Find me in GitHub: ${userResponses.question1} | [My GitHub Profile](${userResponses.question2}) | [Email Me](${userResponses.question3})
+    Find me in GitHub: ${userResponses.username} | [My GitHub Profile](${userResponses.githubProfile}) | [Email Me](${userResponses.email})
 ## Lincense
 * ${userResponses.licenseType}    
     

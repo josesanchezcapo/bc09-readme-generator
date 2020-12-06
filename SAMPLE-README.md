@@ -1,9 +1,9 @@
 
     
-# My Project Name: Generator
+# My Project Name: Title
 ![INQUIRER NMP PACKAGE](./img/inquirer.png)
 ## Project Description
-Create a readme file
+Description
 ## Table of Content
 * [Installation](#installation) 
 * [Usage](#Usage)
@@ -12,14 +12,14 @@ Create a readme file
 * [License](#License)   
 
 ## Installation
-npm
+Installation Steps
 ## Usage
-create readme
+Usage Information
 ## Tests
-npm install inquirer
+How To
 ## Questions
 For any questions, please reach out to me:
-    Find me in GitHub: undefined | [My GitHub Profile](undefined) | [Email Me](undefined)
+    Find me in GitHub: GitHub  UserName | [My GitHub Profile](GitHub-Profile) | [Email Me](email)
 ## Lincense
-* GNU LGPLv3    
+* MIT License    
     
