@@ -22,12 +22,10 @@ THEN I am taken to the corresponding section of the README
 
 // required pakage
 
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require('fs');
-const myModules = require('modules');
-
-// My Modules
-const readmeGenerator = require('./modules/readmeGenerator.js')
+const util = require('util');
+const readmeGenerator =  require('./util/readmeGenerator.js')
 
 // readme questions
 
@@ -105,17 +103,7 @@ const readmeQuestions = [
 
 // write responses to a file
 
-function myReademe(fileName, data) {
-    fs.myReadme(fileName, data, err => {
-        if (err) {
-          return console.log(err);
-        }
-      
-        console.log('readme.md generated')
-    });
-}
 
-const myFile =  my_modules.promisify(myReademe);
 
 // select license image base license type selection
 
@@ -123,27 +111,20 @@ const myFile =  my_modules.promisify(myReademe);
 
 // main
 
-async function myMain() {
-
+async function init() {
     try {
 
         // clear terminal
         console.clear();
-        // prompt readme questions
-        const myResponses = await inquirer.prompt(readmeQuestions);
-        const readme = readmeGenerator(myResponses);
-        console.log('Responses: ', myResponses);
-
-
-        // Write information to file
-        await myFile('ExampleREADME.md', readme);
+        // prompt readme questions and console log user responses
+        const userResponses = await inquirer.prompt(readmeQuestions);
+        const readme = readmeGenerator(userResponses);
+        console.log('Your Responses are: ', userResponses);
 
     } catch (error) {
         console.log(error);
     }
 };
 
-// calling main
-
-myMain();
+init();
 
